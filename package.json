@@ -5,9 +5,9 @@
   "main": "lib/react-emoji.js",
   "typings": "lib/react-emoji.d.ts",
   "scripts": {
+    "lint": "tslint --project tsconfig.json",
     "build": "rimraf lib && tsc -p tsconfig.prod.json",
-    "test": "jest",
-    "coveralls": "cat coverage/lcov.info | coveralls",
+    "test": "jest --coverage",
     "prepublishOnly": "npm test && npm run build"
   },
   "repository": {
