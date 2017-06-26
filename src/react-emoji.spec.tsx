@@ -81,6 +81,19 @@ describe("ReactEmoji", () => {
         />
       </div>,
     );
+
+    match(
+      <ReactEmoji attrs={{ className: "foo" }}>
+        :smile:
+      </ReactEmoji>,
+      <div className="foo">
+        <img
+          width="20px"
+          height="20px"
+          src="https://twemoji.maxcdn.com/svg/1f604.svg"
+        />
+      </div>,
+    );
   });
 
   test("multi", () => {
@@ -105,9 +118,9 @@ describe("ReactEmoji", () => {
 
   test("symbols", () => {
     match(
-      <ReactEmoji type={EmojiType.SYMBOLS} symbolsUrl="/symbols.svg">:smile:</ReactEmoji>,
+      <ReactEmoji type={EmojiType.SYMBOLS} symbolsUrl="/symbols.svg" svgAttrs={{ className: "foo" }}>:smile:</ReactEmoji>,
       <div>
-        <svg width="20px" height="20px">
+        <svg width="20px" height="20px" className="foo">
           <use xlinkHref="/symbols.svg#1f604" />
         </svg>
       </div>,
