@@ -61,6 +61,13 @@ function emojifyText(text: string, props: IReactEmojiProps): React.ReactChild[] 
       return createImageTag(hex, props);
     }
     return word;
+  }).filter((child) => {
+    if (typeof child === "string") {
+      if (!child.length) {
+        return false;
+      }
+    }
+    return true;
   });
 }
 

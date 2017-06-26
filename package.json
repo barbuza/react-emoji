@@ -1,6 +1,6 @@
 {
   "name": "react-emoji-ng",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "An emoji component for React",
   "main": "lib/react-emoji.js",
   "typings": "lib/react-emoji.d.ts",
