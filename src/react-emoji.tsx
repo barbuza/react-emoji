@@ -81,14 +81,22 @@ export interface IReactEmojiProps {
   attrs?: React.HTMLAttributes<HTMLElement>;
   imgAttrs?: React.HTMLAttributes<HTMLImageElement>;
   svgAttrs?: React.SVGAttributes<SVGSVGElement>;
-  children: string;
+  children: React.ReactNode;
   symbolsUrl?: string;
   type?: EmojiType;
   tag?: string;
 }
 
-export const ReactEmoji: React.SFC<IReactEmojiProps> = (props) => React.createElement(
-  props.tag || "div",
-  props.attrs,
-  ...emojifyText(props.children, props),
-);
+export const ReactEmoji: React.SFC<IReactEmojiProps> = (props) => {
+  const children = React.Children.map(props.children, (child) => {
+    if (typeof child === "string") {
+      return emojifyText(child, props);
+    }
+    return child;
+  });
+  return React.createElement(
+    props.tag || "div",
+    props.attrs,
+    ...children,
+  );
+};
