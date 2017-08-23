@@ -128,4 +128,21 @@ describe("ReactEmoji", () => {
       </div>,
     );
   });
+
+  test("multiple different children", () => {
+    match(
+      <ReactEmoji>
+        <div />
+        :smile:
+      </ReactEmoji>,
+      <div>
+        <div></div>
+        <img
+          width="20px"
+          height="20px"
+          src="https://twemoji.maxcdn.com/svg/1f604.svg"
+        />
+      </div>,
+    );
+  });
 });

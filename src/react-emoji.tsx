@@ -81,7 +81,7 @@ export interface IReactEmojiProps {
   attrs?: React.HTMLAttributes<HTMLElement>;
   imgAttrs?: React.HTMLAttributes<HTMLImageElement>;
   svgAttrs?: React.SVGAttributes<SVGSVGElement>;
-  children: string;
+  children: React.ReactNode;
   symbolsUrl?: string;
   type?: EmojiType;
   tag?: string;
