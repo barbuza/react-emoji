@@ -50,7 +50,7 @@ function createImageTag(hex: string, props: IReactEmojiProps) {
   }
 }
 
-function emojifyText(text: string, props: IReactEmojiProps): React.ReactChild[] {
+export function emojifyText(text: string, props: IReactEmojiProps): React.ReactChild[] {
   return text.split(delimiter).map((word) => {
     const match = word.match(delimiter);
     if (match) {
