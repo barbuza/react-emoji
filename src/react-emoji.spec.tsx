@@ -1,4 +1,5 @@
 import * as React from "react";
+// tslint:disable-next-line: no-implicit-dependencies no-submodule-imports
 import { renderToStaticMarkup } from "react-dom/server";
 
 import { EmojiType, ReactEmoji } from "./react-emoji";
